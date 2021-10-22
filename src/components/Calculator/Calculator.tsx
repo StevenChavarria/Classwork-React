@@ -1,5 +1,6 @@
 import React from 'react';
-import { ContactForm } from './ContactForm';
+import Styles from './Styles.module.css'
+import { ContactForm } from '../ContactForm';
 
 interface CalcState {
 	celcius:number;
@@ -19,13 +20,13 @@ export class Calculator extends React.Component<{}, CalcState> {
 	}
 
 	render(){
-		return<>
+		return<div className= { Styles.container }>
 			<h3>Calculadora</h3>
 			<label>Celcius</label>
 			<input name='celcius' onChange={(e)=> this.handleInput(e.target.value)} type='number'/>
 			<p>Covert to F: {this.state.fahrenheit}</p>
 			<ContactForm/>
-		</>
+		</div>
 	}
 }
 
